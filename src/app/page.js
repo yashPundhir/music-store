@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<p>
-			<span className="text-red-500 text-[30px] font-semibold">
-				hello world
-			</span>
-		</p>
+		<div>
+			<h1 className="text-red-500 text-2xl text-center pt-10">
+				testing changes
+			</h1>
+		</div>
 	);
 }
