@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<div>
-			<h1 className="text-red-500 text-2xl text-center pt-10">
-				testing changes
+		<main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+			<h1>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, neque.
 			</h1>
-		</div>
+		</main>
 	);
 }
