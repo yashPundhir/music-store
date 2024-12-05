@@ -34,12 +34,12 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 			>
 				{item}
 			</motion.p>
-			<AnimatePresence>
+			<AnimatePresence mode="popLayout">
 				{active !== null && (
 					<motion.div
 						key={item}
 						initial={{ opacity: 0, scale: 0.85, y: 10 }}
-						exit={{ opacity: 0, scale: 0.85, y: 10 }}
+						exit={{ opacity: 0, scale: 0.85, y: 10, pointerEvents: "none" }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
 						transition={transition}
 					>

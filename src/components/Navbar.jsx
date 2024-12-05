@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 
 import { cn } from "@/lib/utils";
+import { courses } from "@/utils/homePageConstants";
 
 const Navbar = ({ className }) => {
 	const [active, setActive] = useState(null);
@@ -18,28 +19,20 @@ const Navbar = ({ className }) => {
 		>
 			<Menu setActive={setActive}>
 				<Link href="/" onMouseEnter={() => setActive(null)}>
-					<MenuItem
-						setActive={setActive}
-						active={active}
-						item="Home"
-					></MenuItem>
+					Home
 				</Link>
 				<MenuItem setActive={setActive} active={active} item="Courses">
-					<ProductItem
-						title="Algochurn"
-						href="https://algochurn.com"
-						src="https://assets.aceternity.com/demos/algochurn.webp"
-						description="Prepare for tech interviews like never before."
-					/>
-				</MenuItem>
-				<MenuItem setActive={setActive} active={active} item="Services">
 					<div className="flex flex-col space-y-4 text-sm">
-						<HoveredLink href="/web-dev">Web Development</HoveredLink>
-						<HoveredLink href="/interface-design">Interface Design</HoveredLink>
-						<HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-						<HoveredLink href="/branding">Branding</HoveredLink>
+						{courses.map((course) => (
+							<HoveredLink key={course.id} href={course.route}>
+								{course.title}
+							</HoveredLink>
+						))}
 					</div>
 				</MenuItem>
+				<Link href="/contact" onMouseEnter={() => setActive(null)}>
+					Contact Us
+				</Link>
 			</Menu>
 		</div>
 	);
